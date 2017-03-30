@@ -19,32 +19,60 @@ Forked from [YAK Pro - Php Obfuscator](https://github.com/pk-fr/yakpro-po)
 
 
 ## Setup:
-    1. Prerequisites: git and php-cli (command line interface) packages. 
-       on ubuntu: (adapt according your linux distribution) 
-       # apt-get install git 
-       # apt-get install php5-cli
-       do not forget to install all other php modules that you are using within your software:
-            for example: apt-get install php5-mysql if you are using mysql... 
-    2. Navigate to the directory where you want to install yakpro-po (/usr/local is a good idea): 
-       # cd /usr/local 
-    3. Then retrieve from GitHub: 
-       # git clone --recursive https://github.com/pk-fr/yakpro-po.git
-    4. Go to the yakpro-po directory: 
-       # cd yakpro-po 
-    5. Check that yakpro-po.php has execute rights, otherwise:
-                                            # chmod a+x yakpro-po.php 
-    6. Create a symbolic link in the /usr/local/bin directory
-       # cd /usr/local/bin 
-       # ln -s /usr/local/yakpro-po/yakpro-po.php yakpro-po 
-    7. You can now run yakpro-po 
-       # yakpro-po --help 
-       # yakpro-po test.php 
 
-    Modify a copy of the yakpro-po.cnf to fit your needs...
-    Read the "Configuration file loading algorithm" section of this document
-    to choose the best location suiting your needs!
+1. Prerequisites: git and php-cli (command line interface) packages. 
+   on ubuntu: (adapt according your linux distribution) 
+   
+   ```bash
+   apt-get install git 
+   apt-get install php5-cli
+   ```
 
-    That's it! You're done!
+    Do not forget to install all other php modules that you are using within your software:
+        for example: apt-get install php5-mysql if you are using mysql... 
+2. Navigate to the directory where you want to install yakpro-po (/usr/local is a good idea): 
+   
+   ```bash
+   cd /usr/local
+   ```
+   
+3. Then retrieve from GitHub: 
+   
+   ```bash
+   git clone --recursive https://github.com/pk-fr/yakpro-po.git
+   ```
+   
+4. Go to the yakpro-po directory: 
+   
+   ```bash
+   cd yakpro-po
+   ```
+   
+5. Check that yakpro-po.php has execute rights, otherwise:
+   
+   ```bash
+   chmod a+x yakpro-po.php
+   ```
+   
+6. Create a symbolic link in the /usr/local/bin directory
+   
+   ```bash
+   cd /usr/local/bin
+   ln -s /usr/local/yakpro-po/yakpro-po.php yakpro-po
+   ```
+   
+7. You can now run yakpro-po 
+   
+   ```bash
+   yakpro-po --help 
+   yakpro-po test.php
+   ```
+
+Modify a copy of the yakpro-po.cnf to fit your needs...
+Read the "Configuration file loading algorithm" section of this document
+to choose the best location suiting your needs!
+
+That's it! You're done!
 
 ####
 
