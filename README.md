@@ -1,47 +1,6 @@
-# YAK Pro - Php Obfuscator
+Forked from [YAK Pro - Php Obfuscator](https://github.com/pk-fr/yakpro-po)
 
-**YAK Pro** stands for **Y**et **A**nother **K**iller **Pro**duct.
-
-Free, Open Source, Published under the MIT License.
-
-This tool parses php with the best existing php parser [PHP-Parser 1.x](https://github.com/nikic/PHP-Parser/tree/1.x),
-which is an awesome php parsing library written by [nikic](https://github.com/nikic).
-
-You just have to download the zip archive and uncompress it under the PHP-Parser subdirectory,
-or make a git clone ...
-
-### Warning:  
-    Currently, yakpro-po only works on 1.x branch of PhpParser.  
-    A new 2.0 PHP Parser has been released with a different API,  
-    and drop support for PHP < 5.4  
-    Unfortunately, This new branch is the default one.  
-    
-    Please use :  
-    git clone --branch=1.x https://github.com/nikic/PHP-Parser.git  
-
-
-The yakpro-po.cnf self-documented file contains many configuration options!
-Take a look at it!
-
-Demo : [yakpro-po demo](https://www.php-obfuscator.com/?demo).
-
-Prerequisites:  php 5.3 or higher, [PHP-Parser 1.x](https://github.com/nikic/PHP-Parser/tree/1.x).
-
-Note: This tool has been written in order to obfuscate pure php sources.
-it is not intended to be used with html and embeded php inside (you may try to deactivate statements shuffling...).
-You can still embed html within php using the echo <<<END ... END; syntax!
-
-## What is Php Obfuscation?
-
-When you have a php project you want to distribute, as php is a script interpretor,
-you distribute also all the sources of your software!
-
-You may want, for any reason, that other people do not understand, modify, or adapt your software.
-
-As your software must be understandable by the **php runtime**, but needs to be very difficult
-to understand by human people, obfuscation is a very good way to achieve this goal.
-
-### YAK Pro - Php Obfuscator Obfuscation Main Features:
+### Main Features:
 
 - Removes all comments, indentation, and generates a single line program file.
 - Obfuscates **if, else, elseif, for, while, do while** by replacing them with **if goto** statements.
@@ -59,21 +18,7 @@ to understand by human people, obfuscation is a very good way to achieve this go
 - Many configuration options that let you have **full control** of what is obfuscated within your project!
 
 
-### Why Yet Another Php Obfuscator?
-I began testing some already existing php obfuscation tools, but I did'nt find one that was
-fitting all my needs.
-I wanted a **simple** command line tool, based on a **highly customisable** config file, that would be able to:
-- Be fast and re-obfuscate only files that were changed based on timestamps of files.
-- Preserve some files and/or directories from obfuscation.
-- Not include in the obfuscated target, some files/directories that are present on the source project.
-- Accept lists of names and/or name prefixes to not obfuscate.
-
-So I started to write this tool.
-Version 1.0 has been written within a few days...
-
-
 ## Setup:
-    Note: This setup is also valid for Windows 10 Anniversary with bash installed...  
     1. Prerequisites: git and php-cli (command line interface) packages. 
        on ubuntu: (adapt according your linux distribution) 
        # apt-get install git 
@@ -125,42 +70,6 @@ According to config_file_path.
 Requires target_directory to be present in your config file!
 Recursivly removes target_directory/yakpro-po
 
-
-## Configuration file loading algorithm:
-(the first found is used)
-
-    --config-file argument value
-    YAKPRO_PO_CONFIG_FILE environment variable value if existing and not empty.
-
-    filename selection:
-           YAKPRO_PO_CONFIG_FILENAME environment variable value if existing and not empty,
-           yakpro-po.cnf otherwise.
-
-     file is then searched in the following directories:
-            YAKPRO_PO_CONFIG_DIRECTORY  environment variable value if existing and not empty.
-            current_working_directory
-            current_working_directory/config
-            home_directory
-            home_directory/config
-            /usr/local/YAK/yakpro-po
-            source_code_directory/default_conf_filename
-
-      if no config file is found, default values are used.
-
-      You can find the default config file as an example in the yakpro-po.cnf file of the
-      repository.
-      Do not modify it directly because it will be overwritten at each update!
-      Use your own yakpro-po.cnf file (for example in the root directory of your project)
-
-      When working on directories,
-      context is saved in order to reuse the same obfuscation translation table.
-      When you make some changes in one or several source files,
-      yakpro-po uses timestamps to only reobfuscate files that were changed
-      since the last obfuscation.
-      This can save you a lot of time.
-
-      caveats: does not delete files that are no more present...
-               use --clean  command line parameter, and then re-obfuscate all!
 
 ## Other command line options:
 (override config file settings)
