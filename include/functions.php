@@ -241,7 +241,7 @@ function obfuscate_directory($source_dir,$target_dir,$keep_mode=false)   // self
                     if (isset($conf->abort_on_error))
                     {
                         fprintf(STDERR, "Aborting...%s",PHP_EOL);
-                        exit;
+                        exit(1);
                     }
                 }
                 file_put_contents($target_path,$obfuscated_str.PHP_EOL);
